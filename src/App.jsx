@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { GamificationProvider } from './context/GamificationContext';
+import { AuthProvider } from './context/AuthContext';
 
 import Sidebar from './components/Sidebar';
 import HomeHero from './components/HomeHero';
@@ -12,6 +13,7 @@ import HerbalQuiz from './components/HerbalQuiz';
 import AyushKnowledgeHub from './components/AyushKnowledgeHub';
 import UserProfile from './components/UserProfile';
 import PlantDetailModal from './components/PlantDetailModal';
+import AuthModal from './components/AuthModal';
 import Footer from './components/Footer';
 
 function MainApp() {
@@ -123,6 +125,9 @@ function MainApp() {
           />
         )}
 
+        {/* Global Auth Modal (User & Admin Sign In / Sign Up) */}
+        <AuthModal />
+
         {/* Global Footer */}
         <Footer setActiveTab={setActiveTab} />
 
@@ -137,9 +142,12 @@ export default function App() {
     <ThemeProvider>
       <LanguageProvider>
         <GamificationProvider>
-          <MainApp />
+          <AuthProvider>
+            <MainApp />
+          </AuthProvider>
         </GamificationProvider>
       </LanguageProvider>
     </ThemeProvider>
   );
 }
+

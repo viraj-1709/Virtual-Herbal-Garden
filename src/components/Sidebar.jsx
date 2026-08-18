@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
+import { useAuth } from '../context/AuthContext';
 import { 
   Sprout, 
   Sun, 
@@ -16,12 +17,16 @@ import {
   MapPin,
   ChevronRight,
   ShieldCheck,
-  Zap
+  Zap,
+  LogIn,
+  LogOut,
+  KeyRound
 } from 'lucide-react';
 
 export default function Sidebar({ activeTab, setActiveTab }) {
   const { lang, setLang, t, languages } = useLanguage();
   const { isDark, toggleTheme } = useTheme();
+  const { currentUser, isAdmin, logout, openAuthModal } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems = [
@@ -31,7 +36,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
     { id: 'ayush', label: t.nav.ayush, icon: BookOpen },
     { id: 'tours', label: t.nav.tours, icon: MapPin },
     { id: 'quiz', label: t.nav.quiz, icon: Award },
-    { id: 'profile', label: t.nav.profile, icon: User },
+    { id: 'profile', label: t.nav.profile, icon: User, badge: isAdmin ? 'Admin' : null },
   ];
 
   const handleSelectTab = (id) => {
@@ -62,6 +67,25 @@ export default function Sidebar({ activeTab, setActiveTab }) {
         </button>
 
         <div className="flex items-center gap-2">
+          {/* Auth Button or Avatar for Mobile */}
+          {currentUser ? (
+            <button
+              onClick={() => handleSelectTab('profile')}
+              title={currentUser.name}
+              className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center font-bold text-xs shadow-sm ring-1 ring-emerald-500/30"
+            >
+              {currentUser.avatarInitials || 'U'}
+            </button>
+          ) : (
+            <button
+              onClick={() => openAuthModal({ tab: 'signin', role: 'user' })}
+              className="px-2.5 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold flex items-center gap-1 shadow-sm"
+            >
+              <LogIn className="w-3.5 h-3.5" />
+              <span>Login</span>
+            </button>
+          )}
+
           {/* Theme switcher */}
           <button
             onClick={toggleTheme}
@@ -97,7 +121,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
         } bg-white dark:bg-herbal-darkCard overflow-y-auto`}
       >
         {/* Top Branding Section */}
-        <div className="space-y-6">
+        <div className="space-y-5">
           
           <div className="flex items-center justify-between">
             <button
@@ -162,7 +186,11 @@ export default function Sidebar({ activeTab, setActiveTab }) {
 
                   {item.badge && (
                     <span className={`text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full ${
-                      isActive ? 'bg-white/20 text-white' : 'bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300/40'
+                      item.badge === 'Admin'
+                        ? 'bg-amber-400 text-slate-900 shadow-sm'
+                        : isActive 
+                          ? 'bg-white/20 text-white' 
+                          : 'bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300/40'
                     }`}>
                       {item.badge}
                     </span>
@@ -174,11 +202,73 @@ export default function Sidebar({ activeTab, setActiveTab }) {
 
         </div>
 
-        {/* Bottom Section: Language, Theme, Profile */}
-        <div className="space-y-4 pt-6 border-t border-emerald-500/10">
+        {/* Bottom Section: Auth Profile Card, Language & Theme */}
+        <div className="space-y-3.5 pt-4 border-t border-emerald-500/10">
+
+          {/* User / Admin Authentication Card */}
+          {currentUser ? (
+            <div className="p-2.5 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/40 border border-emerald-500/20 flex items-center justify-between gap-2.5">
+              <button
+                onClick={() => handleSelectTab('profile')}
+                className="flex items-center gap-2.5 min-w-0 flex-1 text-left group"
+              >
+                <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs shadow-sm flex-shrink-0 ${
+                  isAdmin 
+                    ? 'bg-gradient-to-tr from-amber-500 to-amber-700 text-white ring-2 ring-amber-400/40' 
+                    : 'bg-gradient-to-tr from-emerald-600 to-teal-500 text-white ring-2 ring-emerald-500/30'
+                }`}>
+                  {currentUser.avatarInitials || 'U'}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="text-xs font-bold text-slate-900 dark:text-white truncate group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    {currentUser.name}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className={`text-[10px] font-extrabold uppercase px-1.5 py-0.2 rounded-md ${
+                      isAdmin
+                        ? 'bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-400/30'
+                        : 'bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300'
+                    }`}>
+                      {isAdmin ? '🛡️ Admin' : '🌿 User'}
+                    </span>
+                  </div>
+                </div>
+              </button>
+
+              <button
+                onClick={logout}
+                title="Sign Out"
+                className="p-1.5 rounded-xl text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/40 transition-colors"
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
+            </div>
+          ) : (
+            <div className="p-2.5 rounded-2xl bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-500/20 space-y-2">
+              <div className="text-[11px] font-semibold text-slate-600 dark:text-slate-300 text-center">
+                Access AYUSH Workspace
+              </div>
+              <div className="grid grid-cols-2 gap-1.5">
+                <button
+                  onClick={() => openAuthModal({ tab: 'signin', role: 'user' })}
+                  className="py-1.5 px-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold flex items-center justify-center gap-1 shadow-sm transition-all"
+                >
+                  <LogIn className="w-3 h-3" />
+                  Sign In
+                </button>
+                <button
+                  onClick={() => openAuthModal({ tab: 'signup', role: 'user' })}
+                  className="py-1.5 px-2 rounded-xl glass-panel border border-emerald-500/30 hover:border-emerald-600 text-slate-700 dark:text-slate-200 text-[11px] font-bold flex items-center justify-center gap-1 transition-all"
+                >
+                  <User className="w-3 h-3 text-emerald-600" />
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* Multilingual Selector Pills (Clean Native Scripts) */}
-          <div className="space-y-1.5">
+          <div className="space-y-1">
             <div className="flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400">
               <span className="flex items-center gap-1">
                 <Globe className="w-3.5 h-3.5 text-emerald-600" />
@@ -205,22 +295,14 @@ export default function Sidebar({ activeTab, setActiveTab }) {
             </div>
           </div>
 
-          {/* Dark/Light Switch & Profile Row */}
-          <div className="flex items-center justify-between pt-1">
+          {/* Dark/Light Switch */}
+          <div className="flex items-center justify-between pt-0.5">
             <button
               onClick={toggleTheme}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl glass-panel border border-emerald-500/20 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-emerald-500 transition-colors"
+              className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl glass-panel border border-emerald-500/20 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-emerald-500 transition-colors"
             >
               {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-emerald-700" />}
               <span>{isDark ? 'Light Mode' : 'Dark Mode'}</span>
-            </button>
-
-            <button
-              onClick={() => handleSelectTab('profile')}
-              title="My Profile"
-              className="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center font-bold text-xs shadow-md ring-2 ring-emerald-500/30 hover:ring-emerald-500 transition-all"
-            >
-              VS
             </button>
           </div>
 
@@ -229,3 +311,4 @@ export default function Sidebar({ activeTab, setActiveTab }) {
     </>
   );
 }
+

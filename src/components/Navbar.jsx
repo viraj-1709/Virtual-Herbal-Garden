@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
+import { useAuth } from '../context/AuthContext';
 import { 
   Sprout, 
   Sun, 
@@ -13,12 +14,14 @@ import {
   User, 
   Menu, 
   X, 
-  MapPin
+  MapPin,
+  LogIn
 } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab, onOpenSearch }) {
   const { lang, setLang, t, languages } = useLanguage();
   const { isDark, toggleTheme } = useTheme();
+  const { currentUser, isAdmin, openAuthModal } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
@@ -134,13 +137,28 @@ export default function Navbar({ activeTab, setActiveTab, onOpenSearch }) {
               {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-emerald-700" />}
             </button>
 
-            {/* User Avatar Button */}
-            <button
-              onClick={() => setActiveTab('profile')}
-              className="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center font-bold text-sm shadow-md ring-2 ring-emerald-500/30 hover:ring-emerald-500 transition-all"
-            >
-              VS
-            </button>
+            {/* User Avatar Button or Sign In Button */}
+            {currentUser ? (
+              <button
+                onClick={() => setActiveTab('profile')}
+                title={currentUser.name}
+                className={`w-10 h-10 rounded-full text-white flex items-center justify-center font-bold text-sm shadow-md transition-all ${
+                  isAdmin 
+                    ? 'bg-gradient-to-tr from-amber-500 to-amber-700 ring-2 ring-amber-400/50 hover:ring-amber-400' 
+                    : 'bg-gradient-to-tr from-emerald-600 to-teal-500 ring-2 ring-emerald-500/30 hover:ring-emerald-500'
+                }`}
+              >
+                {currentUser.avatarInitials || 'U'}
+              </button>
+            ) : (
+              <button
+                onClick={() => openAuthModal({ tab: 'signin', role: 'user' })}
+                className="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-md shadow-emerald-600/25 transition-all"
+              >
+                <LogIn className="w-3.5 h-3.5" />
+                <span>Sign In</span>
+              </button>
+            )}
           </div>
 
           {/* Mobile Hamburger Toggle */}
@@ -211,3 +229,4 @@ export default function Navbar({ activeTab, setActiveTab, onOpenSearch }) {
     </header>
   );
 }
+
