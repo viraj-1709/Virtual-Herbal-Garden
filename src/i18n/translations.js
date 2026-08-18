@@ -6,7 +6,6 @@ export const translations = {
       "home": "Home",
       "explore": "Explore Garden",
       "threeD": "3D Garden",
-      "assistant": "AI Assistant",
       "ayush": "AYUSH Systems",
       "tours": "Virtual Tours",
       "quiz": "Herbal Quiz",
@@ -21,29 +20,10 @@ export const translations = {
       "btnExplore": "Explore Herbal Garden",
       "btn3D": "Launch 3D Explorer",
       "btnQuiz": "Take Knowledge Quiz",
-      "btnAssistant": "Ask AI Assistant",
       "statSpecies": "Medicinal Species",
       "statSystems": "AYUSH Systems",
       "statAccuracy": "Verified Knowledge",
       "statInteractive": "Interactive 3D Hotspots"
-    },
-    "assistant": {
-      "heading": "Your AI-Powered Herbal Knowledge Assistant",
-      "subheading": "Ask questions, explore traditional wisdom, and discover the richness of India's medicinal plants.",
-      "placeholder": "Show me plants traditionally associated with digestive health...",
-      "btnAsk": "Ask",
-      "quickSuggestions": [
-        "Digestive health",
-        "Immunity",
-        "Respiratory Health",
-        "Skin Health",
-        "Mental Wellbeing",
-        "General Wellness"
-      ],
-      "didYouKnow": "Did You Know?",
-      "fact": "Many digestive herbs work by supporting Agni (digestive fire) in Ayurveda, which is considered essential for overall health and immunity.",
-      "recommendationPrefix": "Here are some medicinal plants traditionally associated with",
-      "emptyQuery": "Please type a symptom, herb name, or health topic above to consult VedaBot."
     },
     "explorer": {
       "title": "Interactive Herbal Plant Collection",
@@ -92,15 +72,15 @@ export const translations = {
       "saveNotes": "Save Field Notes"
     },
     "threeD": {
-      "title": "Interactive 3D Botanical Anatomy Viewer",
-      "subtitle": "Rotate 360°, zoom in/out, and click glowing anatomical hotspots to inspect medicinal virtues of each plant organ.",
+      "title": "Interactive 3D Botanical Anatomy Studio",
+      "subtitle": "Examine high-fidelity 3D botanical specimens and explore comprehensive anatomical pharmacopeia data for each plant organ.",
       "selectPlant": "Select 3D Plant Model",
-      "rotateHint": "Drag to rotate • Scroll to zoom • Click glowing nodes to inspect anatomy",
+      "rotateHint": "Drag to rotate 360° • Scroll over canvas to zoom",
       "resetView": "Reset Camera",
       "wireframe": "Wireframe Mode",
       "dayNight": "Day / Night Light",
-      "anatomyDetails": "Selected Anatomical Part",
-      "clickToInspect": "Click on any pulsating glowing sphere on the plant model to view detailed anatomical and chemical data."
+      "anatomyDetails": "Botanical Anatomy & Morphology Specifications",
+      "clickToInspect": "Select an anatomical organ from the guide to inspect its morphology, chemistry, and clinical actions."
     },
     "quiz": {
       "title": "Herbal Knowledge Quiz Challenge",
@@ -147,7 +127,6 @@ export const translations = {
       "home": "होम",
       "explore": "उद्यान देखें",
       "threeD": "3D गार्डन",
-      "assistant": "एआई सहायक",
       "ayush": "आयुष प्रणालियाँ",
       "tours": "वर्चुअल यात्रा",
       "quiz": "ज्ञान प्रश्नोत्तरी",
@@ -162,29 +141,10 @@ export const translations = {
       "btnExplore": "हर्बल गार्डन देखें",
       "btn3D": "3D एक्सप्लोरर शुरू करें",
       "btnQuiz": "क्विज खेलें",
-      "btnAssistant": "एआई से पूछें",
       "statSpecies": "औषधीय पौधे",
       "statSystems": "आयुष प्रणालियाँ",
       "statAccuracy": "प्रमाणित ज्ञान",
       "statInteractive": "3D हॉटस्पॉट्स"
-    },
-    "assistant": {
-      "heading": "आपका एआई-संचालित हर्बल ज्ञान सहायक",
-      "subheading": "प्रश्न पूछें, पारंपरिक ज्ञान का अन्वेषण करें, और भारत के औषधीय पौधों की समृद्धि की खोज करें।",
-      "placeholder": "पाचन स्वास्थ्य से जुड़े पारंपरिक औषधीय पौधे बताएं...",
-      "btnAsk": "पूछें",
-      "quickSuggestions": [
-        "Digestive Health",
-        "Immunity",
-        "Respiratory Health",
-        "Skin Health",
-        "Mental Wellbeing",
-        "General Wellness"
-      ],
-      "didYouKnow": "क्या आप जानते हैं?",
-      "fact": "आयुर्वेद में अधिकांश पाचक जड़ी-बूटियाँ जठराग्नि को प्रदीप्त करके काम करती हैं, जो समग्र स्वास्थ्य और रोग प्रतिरोधक क्षमता के लिए आवश्यक है।",
-      "recommendationPrefix": "पारंपरिक आयुष ज्ञान के अनुसार इससे संबंधित प्रमुख औषधीय पौधे:",
-      "emptyQuery": "कृपया वेदबॉट से परामर्श करने के लिए ऊपर कोई लक्षण या विषय टाइप करें।"
     },
     "explorer": {
       "title": "इंटरएक्टिव औषधीय पादप संग्रह",
@@ -233,15 +193,15 @@ export const translations = {
       "saveNotes": "नोट्स सहेजें"
     },
     "threeD": {
-      "title": "इंटरएक्टिव 3D वनस्पति संरचना प्रदर्शक",
-      "subtitle": "पौधे को घुमाएँ, ज़ूम करें और औषधीय तत्वों को जानने के लिए चमकते हुए नोड्स पर क्लिक करें।",
+      "title": "इंटरएक्टिव 3D वनस्पति संरचना स्टूडियो",
+      "subtitle": "3D में औषधीय पौधों का अध्ययन करें और प्रत्येक पौधे के अंग का विस्तृत संरचनात्मक डेटा देखें।",
       "selectPlant": "3D पौधा चुनें",
-      "rotateHint": "घुमाने के लिए ड्रैग करें • ज़ूम के लिए स्क्रॉल करें",
+      "rotateHint": "घुमाने के लिए ड्रैग करें • ज़ूम करने के लिए स्क्रॉल करें",
       "resetView": "कैमरा रीसेट",
       "wireframe": "वायरफ्रेम",
       "dayNight": "दिन / रात मोड",
-      "anatomyDetails": "चयनित पादप अंग का विवरण",
-      "clickToInspect": "रासायनिक और चिकित्सीय जानकारी देखने के लिए 3D मॉडल पर किसी भी चमकते बिंदु पर क्लिक करें।"
+      "anatomyDetails": "शारीरिक संरचना और औषधीय डेटा",
+      "clickToInspect": "संरचनात्मक और रासायनिक डेटा देखने के लिए किसी भी अंग का चयन करें।"
     },
     "quiz": {
       "title": "हर्बल ज्ञान प्रश्नोत्तरी एवं चुनौती",
@@ -288,7 +248,6 @@ export const translations = {
       "home": "முகப்பு",
       "explore": "தோட்டம்",
       "threeD": "3D தோட்டம்",
-      "assistant": "AI உதவியாளர்",
       "ayush": "ஆயுஷ் அமைப்புகள்",
       "tours": "சுற்றுப்பயணம்",
       "quiz": "வினாடி வினா",
@@ -303,29 +262,10 @@ export const translations = {
       "btnExplore": "மூலிகைத் தோட்டம் காண்க",
       "btn3D": "3D தோட்டம் துவங்கு",
       "btnQuiz": "வினாடி வினா ஆடு",
-      "btnAssistant": "AI உதவியாளரிடம் கேள்",
       "statSpecies": "மூலிகை இனங்கள்",
       "statSystems": "ஆயுஷ் அமைப்புகள்",
       "statAccuracy": "சரிபார்க்கப்பட்ட அறிவு",
       "statInteractive": "3D ஊடாடும் பகுதிகள்"
-    },
-    "assistant": {
-      "heading": "உங்கள் AI மூலிகை அறிவு உதவியாளர்",
-      "subheading": "கேள்விகளைக் கேளுங்கள், பாரம்பரிய ஞானத்தை ஆராயுங்கள்.",
-      "placeholder": "செரிமான ஆரோக்கியத்துடன் தொடர்புடைய தாவரங்களைக் காட்டு...",
-      "btnAsk": "கேள்",
-      "quickSuggestions": [
-        "Digestive Health",
-        "Immunity",
-        "Respiratory Health",
-        "Skin Health",
-        "Mental Wellbeing",
-        "General Wellness"
-      ],
-      "didYouKnow": "உங்களுக்குத் தெரியுமா?",
-      "fact": "ஆயுர்வேதத்தில் பல செரிமான மூலிகைகள் அக்னியை (செரிமான தீ) தூண்டுவதன் மூலம் செயல்படுகின்றன.",
-      "recommendationPrefix": "பாரம்பரிய ஆயுஷ் அமைப்புகளின்படி பரிந்துரைக்கப்பட்ட தாவரங்கள்:",
-      "emptyQuery": "வேதபாட் உதவியைப் பெற மேலே உள்ள தலைப்பைத் தட்டச்சு செய்க."
     },
     "explorer": {
       "title": "ஊடாடும் மூலிகைத் தாவரத் தொகுப்பு",
@@ -374,15 +314,15 @@ export const translations = {
       "saveNotes": "சேமி"
     },
     "threeD": {
-      "title": "3D தாவர உடற்கூறியல் காட்சி",
-      "subtitle": "சுழற்றி, பெரிதாக்கி, ஒளிரும் புள்ளிகளைக் கிளிக் செய்து மருத்துவப் பகுதிகளைக் கற்றுக் கொள்ளுங்கள்.",
+      "title": "ஊடாடும் 3D மூலிகை உடற்கூறியல் ஸ்டுடியோ",
+      "subtitle": "3D முறையில் மூலிகைகளை ஆராய்ந்து, தாவரத்தின் விரிவான உடற்கூறியல் தரவுகளை அறியுங்கள்.",
       "selectPlant": "3D தாவரத்தைத் தேர்ந்தெடு",
-      "rotateHint": "சுழற்ற இழுக்கவும் • பெரிதாக்க ஸ்க்ரோல் செய்யவும்",
+      "rotateHint": "சுழற்ற இழுக்கவும் • பெரிதாக்க சுருட்டவும்",
       "resetView": "கேமரா மீட்டமை",
       "wireframe": "வயர்ஃபிரேம்",
       "dayNight": "பகல் / இரவு முறை",
-      "anatomyDetails": "தேர்ந்தெடுக்கப்பட்ட பகுதி",
-      "clickToInspect": "விவரங்களைக் காண 3D மாதிரியில் ஒளிரும் புள்ளிகளைக் கிளிக் செய்யவும்."
+      "anatomyDetails": "உடற்கூறியல் மற்றும் மருத்துவ தரவுகள்",
+      "clickToInspect": "விவரங்களை அறிய உறுப்பை தேர்ந்தெடுக்கவும்."
     },
     "quiz": {
       "title": "மூலிகை அறிவு வினாடி வினா",
@@ -429,7 +369,6 @@ export const translations = {
       "home": "হোম",
       "explore": "উদ্যান অন্বেষণ",
       "threeD": "3D উদ্যান",
-      "assistant": "এআই সহকারী",
       "ayush": "আয়ুষ পদ্ধতি",
       "tours": "ভার্চুয়াল ট্যুর",
       "quiz": "ভেষজ কুইজ",
@@ -444,29 +383,10 @@ export const translations = {
       "btnExplore": "ভেষজ উদ্যান দেখুন",
       "btn3D": "3D এক্সপ্লোরার খুলুন",
       "btnQuiz": "কুইজ খেলুন",
-      "btnAssistant": "এআই-কে জিজ্ঞাসা করুন",
       "statSpecies": "ঔষধি প্রজাতি",
       "statSystems": "আয়ুষ পদ্ধতি",
       "statAccuracy": "যাচাইকৃত জ্ঞান",
       "statInteractive": "3D হটস্পট"
-    },
-    "assistant": {
-      "heading": "আপনার এআই চালিত ভেষজ জ্ঞান সহকারী",
-      "subheading": "প্রশ্ন করুন, ঐতিহ্যবাহী জ্ঞান অন্বেষণ করুন এবং ঔষধি গাছের সমৃদ্ধি আবিষ্কার করুন।",
-      "placeholder": "হজমের জন্য উপকারী ঔষধি গাছ দেখান...",
-      "btnAsk": "জিজ্ঞাসা করুন",
-      "quickSuggestions": [
-        "Digestive Health",
-        "Immunity",
-        "Respiratory Health",
-        "Skin Health",
-        "Mental Wellbeing",
-        "General Wellness"
-      ],
-      "didYouKnow": "আপনি কি জানেন?",
-      "fact": "আয়ুর্বেদে অনেক পাচক ভেষজ অগ্নির শক্তি বৃদ্ধি করে কাজ করে, যা সামগ্রিক জীবনীশক্তির জন্য অপরিহার্য।",
-      "recommendationPrefix": "ঐতিহ্যবাহী আয়ুষ জ্ঞান অনুযায়ী সম্পর্কিত ঔষধি গাছসমূহ:",
-      "emptyQuery": "বেদবটের পরামর্শ পেতে উপরে কোনো লক্ষণ বা বিষয় লিখুন।"
     },
     "explorer": {
       "title": "ইন্টারেক্টিভ ঔষধি উদ্ভিদ সংগ্রহ",
@@ -515,15 +435,15 @@ export const translations = {
       "saveNotes": "সংরক্ষণ করুন"
     },
     "threeD": {
-      "title": "ইন্টারেক্টিভ 3D উদ্ভিদ শারীরস্থান প্রদর্শক",
-      "subtitle": "ঘোরান, জুম করুন এবং উদ্ভিদের প্রতিটি অংশের ফাইটোকেমিক্যাল জানতে উজ্জ্বল হটস্পটগুলিতে ক্লিক করুন।",
+      "title": "ইন্টারেক্টিভ 3D উদ্ভিদ শারীরস্থান স্টুডিও",
+      "subtitle": "3D মডেলে ভেষজ উদ্ভিদ অন্বেষণ করুন এবং প্রতিটি অংশের শারীরবৃত্তীয় তথ্য জানুন।",
       "selectPlant": "3D উদ্ভিদ নির্বাচন করুন",
       "rotateHint": "ঘোরাতে ড্র্যাগ করুন • জুম করতে স্ক্রোল করুন",
       "resetView": "ক্যামেরা রিসেট",
       "wireframe": "ওয়্যারফ্রেম",
       "dayNight": "দিন / রাত মোড",
-      "anatomyDetails": "নির্বাচিত অংশের বিবরণ",
-      "clickToInspect": "বিস্তারিত দেখতে 3D মডেলের যেকোনো উজ্জ্বল বিন্দুতে ক্লিক করুন।"
+      "anatomyDetails": "শারীরবৃত্তীয় এবং ঔষধি তথ্য",
+      "clickToInspect": "বিশদ জানতে যেকোনো অঙ্গ নির্বাচন করুন।"
     },
     "quiz": {
       "title": "ভেষজ জ্ঞান কুইজ ও চ্যালেঞ্জ",

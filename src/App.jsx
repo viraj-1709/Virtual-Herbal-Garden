@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
-import { GamificationProvider, useGamification } from './context/GamificationContext';
+import { GamificationProvider } from './context/GamificationContext';
 
 import Sidebar from './components/Sidebar';
 import HomeHero from './components/HomeHero';
-import AiHerbalAssistant from './components/AiHerbalAssistant';
 import PlantExplorer from './components/PlantExplorer';
 import ThreeDPlantGarden from './components/ThreeDPlantGarden';
 import VirtualTours from './components/VirtualTours';
@@ -19,7 +18,6 @@ function MainApp() {
   const [activeTab, setActiveTab] = useState('home');
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [active3DPlant, setActive3DPlant] = useState(null);
-  const { recentBadge, clearRecentBadge } = useGamification();
 
   const handleOpen3D = (plant) => {
     setActive3DPlant(plant);
@@ -38,27 +36,6 @@ function MainApp() {
       {/* Main Content Area (Offset for Desktop Fixed Sidebar) */}
       <div className="flex-1 lg:pl-72 flex flex-col min-h-screen w-full transition-all">
         
-        {/* Recent Badge Achievement Toast */}
-        {recentBadge && (
-          <div className="fixed bottom-6 right-6 z-50 p-4 rounded-2xl glass-panel border-2 border-amber-500 shadow-2xl bg-amber-500/20 backdrop-blur-xl flex items-center gap-3 animate-in slide-in-from-bottom-4">
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping" />
-            <div>
-              <div className="text-[10px] font-extrabold uppercase tracking-wider text-amber-900 dark:text-amber-300">
-                Badge Unlocked
-              </div>
-              <div className="font-heading font-bold text-xs sm:text-sm text-slate-900 dark:text-white">
-                {recentBadge}
-              </div>
-            </div>
-            <button
-              onClick={clearRecentBadge}
-              className="ml-2 text-xs font-bold text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        )}
-
         {/* Dynamic Views */}
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-8">
           
@@ -68,13 +45,6 @@ function MainApp() {
               <HomeHero
                 setActiveTab={setActiveTab}
               />
-
-              <div className="pt-2">
-                <AiHerbalAssistant
-                  onSelectPlant={setSelectedPlant}
-                  onOpen3D={handleOpen3D}
-                />
-              </div>
 
               <div className="space-y-4 pt-2">
                 <div className="flex items-center justify-between border-b border-emerald-500/10 pb-2">
@@ -115,14 +85,6 @@ function MainApp() {
             <ThreeDPlantGarden
               initialPlant={active3DPlant}
               onOpenDetails={setSelectedPlant}
-            />
-          )}
-
-          {/* AI ASSISTANT TAB */}
-          {activeTab === 'assistant' && (
-            <AiHerbalAssistant
-              onSelectPlant={setSelectedPlant}
-              onOpen3D={handleOpen3D}
             />
           )}
 

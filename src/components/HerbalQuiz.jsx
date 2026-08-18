@@ -83,16 +83,16 @@ export default function HerbalQuiz() {
 
         <div className="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800">
           <div>
-            <div className="text-[10px] font-bold text-slate-500 uppercase">Proficiency Level</div>
+            <div className="text-[10px] font-bold text-slate-500 uppercase">Knowledge Rating</div>
             <div className="font-heading font-bold text-base text-emerald-800 dark:text-emerald-300">
               {percentage >= 80 ? 'Master Herbalist' : percentage >= 50 ? 'Herbal Scholar' : 'Herbal Apprentice'}
             </div>
           </div>
           <div>
-            <div className="text-[10px] font-bold text-slate-500 uppercase">{t.quiz.xpEarned}</div>
-            <div className="font-heading font-bold text-base text-amber-600 dark:text-amber-400 flex items-center justify-center gap-1">
-              <Sparkles className="w-4 h-4" />
-              +{score * 30 + 50} XP
+            <div className="text-[10px] font-bold text-slate-500 uppercase">Quiz Accuracy</div>
+            <div className="font-heading font-bold text-base text-emerald-600 dark:text-emerald-400 flex items-center justify-center gap-1">
+              <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+              {percentage}%
             </div>
           </div>
         </div>

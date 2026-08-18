@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
-import { useGamification } from '../context/GamificationContext';
 import { 
   Sprout, 
   Sun, 
@@ -9,13 +8,11 @@ import {
   Globe, 
   Compass, 
   Box, 
-  Bot, 
   BookOpen, 
   Award, 
   User, 
   Menu, 
   X,
-  Sparkles,
   MapPin,
   ChevronRight,
   ShieldCheck,
@@ -25,14 +22,12 @@ import {
 export default function Sidebar({ activeTab, setActiveTab }) {
   const { lang, setLang, t, languages } = useLanguage();
   const { isDark, toggleTheme } = useTheme();
-  const { xp, level } = useGamification();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems = [
     { id: 'home', label: t.nav.home, icon: Sprout },
     { id: 'explore', label: t.nav.explore, icon: Compass },
     { id: '3d-garden', label: t.nav.threeD, icon: Box, badge: 'Interactive' },
-    { id: 'assistant', label: t.nav.assistant, icon: Bot, badge: 'AI' },
     { id: 'ayush', label: t.nav.ayush, icon: BookOpen },
     { id: 'tours', label: t.nav.tours, icon: MapPin },
     { id: 'quiz', label: t.nav.quiz, icon: Award },
@@ -179,28 +174,8 @@ export default function Sidebar({ activeTab, setActiveTab }) {
 
         </div>
 
-        {/* Bottom Section: Gamification, Language, Theme, Profile */}
+        {/* Bottom Section: Language, Theme, Profile */}
         <div className="space-y-4 pt-6 border-t border-emerald-500/10">
-          
-          {/* Gamification Progress Widget */}
-          <div
-            onClick={() => handleSelectTab('profile')}
-            className="cursor-pointer p-3 rounded-2xl bg-amber-50/80 dark:bg-amber-950/40 border border-amber-300/70 dark:border-amber-800/60 space-y-1.5 transition-transform hover:scale-[1.02]"
-          >
-            <div className="flex items-center justify-between text-xs font-bold text-amber-900 dark:text-amber-300">
-              <span className="flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-amber-600 fill-amber-600" />
-                Level {level} Explorer
-              </span>
-              <span>{xp} XP</span>
-            </div>
-            <div className="w-full bg-amber-200/60 dark:bg-amber-900/60 h-1.5 rounded-full overflow-hidden">
-              <div
-                className="bg-amber-600 h-full rounded-full transition-all"
-                style={{ width: `${Math.min(100, (xp % 200) / 2)}%` }}
-              />
-            </div>
-          </div>
 
           {/* Multilingual Selector Pills (Clean Native Scripts) */}
           <div className="space-y-1.5">

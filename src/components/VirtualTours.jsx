@@ -16,7 +16,7 @@ import {
 
 export default function VirtualTours({ onSelectPlant }) {
   const { t, getPlantCommonName } = useLanguage();
-  const { addXP } = useGamification();
+  const { triggerConfetti } = useGamification();
 
   const [activeTour, setActiveTour] = useState(virtualToursData[0]);
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
@@ -31,8 +31,8 @@ export default function VirtualTours({ onSelectPlant }) {
     if (currentStepIndex < activeTour.steps.length - 1) {
       setCurrentStepIndex(prev => prev + 1);
     } else {
-      addXP(50, 'Completed Virtual Garden Tour');
-      alert(`Tour completed! You earned 50 XP for completing "${activeTour.title}".`);
+      triggerConfetti();
+      alert(`Tour completed! You have successfully completed the "${activeTour.title}" trail.`);
     }
   };
 

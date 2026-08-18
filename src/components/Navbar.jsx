@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
-import { useGamification } from '../context/GamificationContext';
 import { 
   Sprout, 
   Sun, 
@@ -9,20 +8,17 @@ import {
   Globe, 
   Compass, 
   Box, 
-  Bot, 
   BookOpen, 
   Award, 
   User, 
   Menu, 
-  X,
-  Sparkles,
+  X, 
   MapPin
 } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab, onOpenSearch }) {
   const { lang, setLang, t, languages } = useLanguage();
   const { isDark, toggleTheme } = useTheme();
-  const { xp, level } = useGamification();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
@@ -30,7 +26,6 @@ export default function Navbar({ activeTab, setActiveTab, onOpenSearch }) {
     { id: 'home', label: t.nav.home, icon: Sprout },
     { id: 'explore', label: t.nav.explore, icon: Compass },
     { id: '3d-garden', label: t.nav.threeD, icon: Box },
-    { id: 'assistant', label: t.nav.assistant, icon: Bot },
     { id: 'ayush', label: t.nav.ayush, icon: BookOpen },
     { id: 'tours', label: t.nav.tours, icon: MapPin },
     { id: 'quiz', label: t.nav.quiz, icon: Award },
@@ -87,23 +82,9 @@ export default function Navbar({ activeTab, setActiveTab, onOpenSearch }) {
             })}
           </nav>
 
-          {/* Action Tools: Lang, Theme, XP Badge, Profile */}
+          {/* Action Tools: Lang, Theme, Profile */}
           <div className="hidden sm:flex items-center gap-3">
             
-            {/* Gamification Level & XP */}
-            <div 
-              onClick={() => setActiveTab('profile')}
-              className="cursor-pointer flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 dark:bg-amber-950/60 border border-amber-300/80 dark:border-amber-700/60 shadow-sm hover:scale-105 transition-transform"
-            >
-              <div className="w-5 h-5 rounded-full bg-amber-500 text-white flex items-center justify-center text-[11px] font-bold">
-                L{level}
-              </div>
-              <div className="text-xs font-bold text-amber-900 dark:text-amber-300 flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                {xp} XP
-              </div>
-            </div>
-
             {/* Language Selector Dropdown */}
             <div className="relative">
               <button

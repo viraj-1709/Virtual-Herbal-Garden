@@ -44,8 +44,8 @@ export default function Footer({ setActiveTab }) {
                 </button>
               </li>
               <li>
-                <button onClick={() => setActiveTab('assistant')} className="hover:text-emerald-600 dark:hover:text-emerald-400">
-                  AI Knowledge Assistant
+                <button onClick={() => setActiveTab('ayush')} className="hover:text-emerald-600 dark:hover:text-emerald-400">
+                  AYUSH Systems Hub
                 </button>
               </li>
               <li>

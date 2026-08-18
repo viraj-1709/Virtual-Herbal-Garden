@@ -2,47 +2,40 @@ import React from 'react';
 import { useGamification } from '../context/GamificationContext';
 import { useLanguage } from '../context/LanguageContext';
 import { plantsData } from '../data/plantsData';
-import BadgesShelf from './BadgesShelf';
 import { 
   User, 
-  Sparkles, 
   Bookmark, 
   BookOpen, 
   Award, 
   ExternalLink,
-  ShieldCheck
+  ShieldCheck,
+  CheckCircle2
 } from 'lucide-react';
 
 export default function UserProfile({ onSelectPlant }) {
-  const { xp, level, bookmarkedPlants, notes } = useGamification();
+  const { bookmarkedPlants, notes } = useGamification();
   const { t, getPlantCommonName } = useLanguage();
 
   const savedBookmarks = plantsData.filter(p => bookmarkedPlants.includes(p.id));
   const noteKeys = Object.keys(notes).filter(k => notes[k]?.trim().length > 0);
-
-  const nextLevelXP = level * 200;
-  const currentLevelProgress = Math.round(((xp % 200) / 200) * 100);
 
   return (
     <div className="max-w-5xl mx-auto space-y-6">
       
       <div className="rounded-3xl p-5 sm:p-7 glass-panel border border-emerald-500/30 shadow-lg bg-gradient-to-r from-emerald-900/20 via-teal-900/10 to-transparent flex flex-col sm:flex-row items-center gap-5">
         <div className="relative">
-          <div className="w-20 h-20 rounded-3xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-amber-500 p-1 shadow-lg shadow-emerald-600/30">
+          <div className="w-20 h-20 rounded-3xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-teal-700 p-1 shadow-lg shadow-emerald-600/30">
             <div className="w-full h-full rounded-[22px] bg-slate-900 flex items-center justify-center text-white font-heading font-extrabold text-2xl">
               VS
             </div>
           </div>
-          <span className="absolute -bottom-1.5 -right-1.5 px-2 py-0.5 rounded-full bg-amber-500 text-white font-extrabold text-[10px] shadow-sm">
-            Lvl {level}
-          </span>
         </div>
 
         <div className="space-y-2.5 flex-1 text-center sm:text-left w-full">
           <div>
             <div className="flex items-center justify-center sm:justify-start gap-2">
               <h2 className="font-heading font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-white">
-                Herbal Explorer
+                AYUSH Botanical Researcher
               </h2>
               <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-[11px] font-bold">
                 Ayurveda Student
@@ -53,25 +46,18 @@ export default function UserProfile({ onSelectPlant }) {
             </p>
           </div>
 
-          <div className="space-y-1">
-            <div className="flex items-center justify-between text-xs font-bold text-slate-600 dark:text-slate-300">
-              <span className="flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                {xp} Total XP
-              </span>
-              <span>Next Level: {nextLevelXP} XP ({currentLevelProgress}%)</span>
-            </div>
-            <div className="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div
-                className="bg-gradient-to-r from-emerald-500 via-teal-500 to-amber-500 h-full transition-all duration-300"
-                style={{ width: `${currentLevelProgress}%` }}
-              />
-            </div>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-1 text-xs font-bold text-slate-600 dark:text-slate-300">
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-500/20 text-emerald-800 dark:text-emerald-300">
+              <Bookmark className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 fill-emerald-600" />
+              {savedBookmarks.length} Saved Flora
+            </span>
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-teal-50 dark:bg-teal-950/60 border border-teal-500/20 text-teal-800 dark:text-teal-300">
+              <BookOpen className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+              {noteKeys.length} Field Notes
+            </span>
           </div>
         </div>
       </div>
-
-      <BadgesShelf />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div className="p-5 rounded-3xl glass-panel border border-emerald-500/20 shadow-md space-y-3.5">
