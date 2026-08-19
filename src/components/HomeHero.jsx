@@ -4,7 +4,6 @@ import {
   Compass, 
   Box, 
   Award, 
-  Sparkles, 
   ShieldCheck, 
   Layers, 
   Leaf

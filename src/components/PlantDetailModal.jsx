@@ -4,22 +4,18 @@ import { useGamification } from '../context/GamificationContext';
 import { 
   X, 
   Volume2, 
-  VolumeX, 
   Bookmark, 
   Share2, 
   Box, 
   Sun, 
   Droplets, 
-  Compass, 
   Sparkles, 
   AlertTriangle, 
   BookOpen, 
   Save, 
   Check, 
   Flame, 
-  Leaf, 
-  Activity,
-  Layers
+  Leaf
 } from 'lucide-react';
 
 export default function PlantDetailModal({ plant, onClose, onOpen3D }) {

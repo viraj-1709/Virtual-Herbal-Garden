@@ -9,9 +9,7 @@ export const translations = {
       "ayush": "AYUSH Systems",
       "tours": "Virtual Tours",
       "quiz": "Herbal Quiz",
-      "learning": "Learning Hub",
-      "profile": "My Profile",
-      "about": "About"
+      "profile": "My Profile"
     },
     "hero": {
       "badge": "Smart India Hackathon 2026 • AYUSH Innovation",
@@ -33,9 +31,7 @@ export const translations = {
       "filterBySystem": "AYUSH System",
       "filterByCategory": "Health Category",
       "filterByPart": "Plant Part Used",
-      "filterByHabitat": "Climate / Habitat",
       "viewCards": "Cards",
-      "view3D": "3D Garden",
       "viewList": "List",
       "showing": "Showing",
       "of": "of",
@@ -46,10 +42,7 @@ export const translations = {
     "card": {
       "viewDetails": "View Details",
       "view3D": "View 3D Model",
-      "popular": "Popular",
-      "parts": "Parts Used",
-      "benefits": "Key Benefits",
-      "ayush": "Associated AYUSH System"
+      "parts": "Parts Used"
     },
     "modal": {
       "tabOverview": "Overview",
@@ -130,9 +123,7 @@ export const translations = {
       "ayush": "आयुष प्रणालियाँ",
       "tours": "वर्चुअल यात्रा",
       "quiz": "ज्ञान प्रश्नोत्तरी",
-      "learning": "ज्ञान केंद्र",
-      "profile": "मेरी प्रोफ़ाइल",
-      "about": "परिचय"
+      "profile": "मेरी प्रोफ़ाइल"
     },
     "hero": {
       "badge": "स्मार्ट इंडिया हैकथॉन 2026 • आयुष नवाचार",
@@ -154,9 +145,7 @@ export const translations = {
       "filterBySystem": "आयुष प्रणाली",
       "filterByCategory": "स्वास्थ्य श्रेणी",
       "filterByPart": "उपयोगी भाग",
-      "filterByHabitat": "जलवायु / क्षेत्र",
       "viewCards": "कार्ड",
-      "view3D": "3D गार्डन",
       "viewList": "सूची",
       "showing": "दिखाए जा रहे हैं",
       "of": "में से",
@@ -167,10 +156,7 @@ export const translations = {
     "card": {
       "viewDetails": "विवरण देखें",
       "view3D": "3D मॉडल देखें",
-      "popular": "लोकप्रिय",
-      "parts": "उपयोगी भाग",
-      "benefits": "मुख्य लाभ",
-      "ayush": "संबद्ध आयुष प्रणाली"
+      "parts": "उपयोगी भाग"
     },
     "modal": {
       "tabOverview": "अवलोकन",
@@ -251,9 +237,7 @@ export const translations = {
       "ayush": "ஆயுஷ் அமைப்புகள்",
       "tours": "சுற்றுப்பயணம்",
       "quiz": "வினாடி வினா",
-      "learning": "கற்றல் மையம்",
-      "profile": "என் சுயவிவரம்",
-      "about": "பற்றி"
+      "profile": "என் சுயவிவரம்"
     },
     "hero": {
       "badge": "ஸ்மார்ட் இந்தியா ஹேக்கத்தான் 2026 • ஆயுஷ் கண்டுபிடிப்பு",
@@ -275,9 +259,7 @@ export const translations = {
       "filterBySystem": "ஆயுஷ் முறை",
       "filterByCategory": "பிரிவு",
       "filterByPart": "பயன்படும் பகுதி",
-      "filterByHabitat": "வாழிடம்",
       "viewCards": "அட்டை",
-      "view3D": "3D தோட்டம்",
       "viewList": "பட்டியல்",
       "showing": "காட்டப்படுகிறது",
       "of": "/",
@@ -288,10 +270,7 @@ export const translations = {
     "card": {
       "viewDetails": "விவரம் காண்க",
       "view3D": "3D மாதிரி காண்க",
-      "popular": "பிரபலமானது",
-      "parts": "பயன்படும் பகுதி",
-      "benefits": "முக்கிய நன்மைகள்",
-      "ayush": "ஆயுஷ் முறை"
+      "parts": "பயன்படும் பகுதி"
     },
     "modal": {
       "tabOverview": "கண்ணோட்டம்",
@@ -372,9 +351,7 @@ export const translations = {
       "ayush": "আয়ুষ পদ্ধতি",
       "tours": "ভার্চুয়াল ট্যুর",
       "quiz": "ভেষজ কুইজ",
-      "learning": "জ্ঞান কেন্দ্র",
-      "profile": "আমার প্রোফাইল",
-      "about": "সম্পর্কে"
+      "profile": "আমার প্রোফাইল"
     },
     "hero": {
       "badge": "স্মার্ট ইন্ডিয়া হ্যাকাথন ২০২৬ • আয়ুষ উদ্ভাবন",
@@ -396,9 +373,7 @@ export const translations = {
       "filterBySystem": "আয়ুষ পদ্ধতি",
       "filterByCategory": "স্বাস্থ্য বিভাগ",
       "filterByPart": "ব্যবহৃত অংশ",
-      "filterByHabitat": "আবাসস্থল",
       "viewCards": "কার্ড",
-      "view3D": "3D উদ্যান",
       "viewList": "তালিকা",
       "showing": "প্রদর্শিত হচ্ছে",
       "of": "এর মধ্যে",
@@ -409,10 +384,7 @@ export const translations = {
     "card": {
       "viewDetails": "বিস্তারিত দেখুন",
       "view3D": "3D মডেল দেখুন",
-      "popular": "জনপ্রিয়",
-      "parts": "ব্যবহৃত অংশ",
-      "benefits": "মূল উপকারিতা",
-      "ayush": "আয়ুষ পদ্ধতি"
+      "parts": "ব্যবহৃত অংশ"
     },
     "modal": {
       "tabOverview": "সংক্ষিপ্ত বিবরণ",

@@ -15,12 +15,9 @@ import {
   Menu, 
   X,
   MapPin,
-  ChevronRight,
   ShieldCheck,
-  Zap,
   LogIn,
-  LogOut,
-  KeyRound
+  LogOut
 } from 'lucide-react';
 
 export default function Sidebar({ activeTab, setActiveTab }) {

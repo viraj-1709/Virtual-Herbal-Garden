@@ -8,10 +8,7 @@ import {
   Clock, 
   ArrowRight, 
   ArrowLeft, 
-  Volume2, 
-  VolumeX, 
-  CheckCircle,
-  Leaf
+  Volume2
 } from 'lucide-react';
 
 export default function VirtualTours({ onSelectPlant }) {

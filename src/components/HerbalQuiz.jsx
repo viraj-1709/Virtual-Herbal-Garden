@@ -7,11 +7,8 @@ import {
   CheckCircle2, 
   XCircle, 
   RotateCcw, 
-  Sparkles, 
-  Flame, 
   ArrowRight,
-  Trophy,
-  HelpCircle
+  Trophy
 } from 'lucide-react';
 
 export default function HerbalQuiz() {

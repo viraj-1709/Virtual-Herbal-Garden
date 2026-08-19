@@ -10,18 +10,10 @@ import {
   Moon, 
   Grid, 
   Sparkles, 
-  ArrowRight,
   Zap,
   Leaf,
   Layers,
-  Sprout,
-  ShieldCheck,
-  BookOpen,
-  Activity,
-  FlaskConical,
-  Award,
-  ChevronRight,
-  Info
+  Sprout
 } from 'lucide-react';
 
 const plantAnatomyMap = {

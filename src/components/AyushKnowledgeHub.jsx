@@ -2,11 +2,8 @@ import React from 'react';
 import { ayushSystemsData, traditionalPreparations } from '../data/ayushData';
 import { 
   BookOpen, 
-  Layers, 
   Flame, 
-  ShieldCheck,
-  TreeDeciduous,
-  Compass
+  TreeDeciduous
 } from 'lucide-react';
 
 export default function AyushKnowledgeHub() {

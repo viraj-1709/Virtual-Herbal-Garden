@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Sprout, ShieldCheck, ExternalLink, Heart } from 'lucide-react';
+import { Sprout, ShieldCheck } from 'lucide-react';
 
 export default function Footer({ setActiveTab }) {
   const { t } = useLanguage();

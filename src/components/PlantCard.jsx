@@ -5,8 +5,7 @@ import {
   Bookmark, 
   Box, 
   ArrowRight, 
-  Sparkles, 
-  Check
+  Sparkles
 } from 'lucide-react';
 
 export default function PlantCard({ plant, onSelect, onOpen3D }) {
